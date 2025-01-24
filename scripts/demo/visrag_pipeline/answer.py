@@ -54,7 +54,7 @@ def answer_question(images, question):
     return answer
 
 model_path = 'openbmb/VisRAG-Ret'
-gen_model_path = 'openbmb/MiniCPM-V-2_6'
+gen_model_path = 'openbmb/MiniCPM-o-2_6'
 
 device = 'cuda'
 
@@ -73,13 +73,13 @@ model.eval()
 model.to(device)
 print("VisRAG-Ret load success!")
 
-print("VisRAG-Gen (MiniCPM-V-2_6) load begin...")
+print("VisRAG-Gen (MiniCPM-o-2_6) load begin...")
 gen_tokenizer = AutoTokenizer.from_pretrained(gen_model_path, attn_implementation='sdpa', trust_remote_code=True)
 gen_model = AutoModel.from_pretrained(gen_model_path, trust_remote_code=True,
     attn_implementation='sdpa', torch_dtype=torch.bfloat16)
 gen_model.eval()
 gen_model.to(device)
-print("VisRAG-Gen (MiniCPM-V-2_6) load success!")
+print("VisRAG-Gen (MiniCPM-o-2_6) load success!")
 
 while True:
     query = input("Enter your query: ")
