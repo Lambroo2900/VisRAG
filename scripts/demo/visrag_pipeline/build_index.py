@@ -19,6 +19,7 @@ def add_pdfs(pdf_dir):
     pdf_file_list = [os.path.join(pdf_dir, f) for f in pdf_file_list]
 
     index2img_filename = []
+    reps_list = []
 
     for pdf_file_path in pdf_file_list:
         print(f"Processing {pdf_file_path}")
@@ -31,7 +32,6 @@ def add_pdfs(pdf_dir):
         dpi = 200
         doc = fitz.open(pdf_file_path)
         
-        reps_list = []
         images = []
 
         for page in tqdm.tqdm(doc, desc=f"Processing {pdf_name}"):
