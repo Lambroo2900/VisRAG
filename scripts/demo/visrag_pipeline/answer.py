@@ -54,7 +54,7 @@ def answer_question(images, question):
     return answer
 
 model_path = 'openbmb/VisRAG-Ret'
-gen_model_path = 'openbmb/MiniCPM-o-2_6'
+gen_model_path = 'openbmb/MiniCPM-V-2_6'
 
 device = 'cuda'
 
